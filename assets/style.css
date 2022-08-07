@@ -13,3 +13,15 @@ h1 {
 .hidden {
     visibility: hidden;
 }
+
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}

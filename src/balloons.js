@@ -1,3 +1,5 @@
+import {setTitleColor} from "./utils.js";
+
 let totalScore = 0;
 const emptyBalloon = { currentPopNum:0, currentValue:0 };
 let curBalloon = emptyBalloon;
@@ -7,17 +9,12 @@ let balloonImg;
 let ohNoMsg;
 let newBlnMsg;
 let valueLabel;
+let balloonsLeftLabel;
 
-// //#region local storage
-// const prefix = "vg1566-";
-// const holoKey = prefix + "holo";
-// //const priceOrderKey = prefix + "price";
-// const typeKey = prefix + "type";
-// const searchKey = prefix + "search";
-// const storedHolo = localStorage.getItem(holoKey);
-// //const storedPriceOrder = localStorage.getItem(priceOrderKey);
-// const storedType = localStorage.getItem(typeKey);
-// const storedSearch = localStorage.getItem(searchKey);
+const setShopChanges = () => {
+    setTitleColor();
+}
+
 const makeNewBalloon = () => {
     if(balloonsLeft === 0)
     {
@@ -67,6 +64,8 @@ const pumpBalloon = () => {
 }
 
 const init = () => {
+    setShopChanges();
+
     // create messages
     newBlnMsg = document.createElement('p');
     newBlnMsg.innerHTML = "The more you pump your balloons, the more they will be worth. You can sell your current balloon at any time, but if it pops, you lose that balloon.";
