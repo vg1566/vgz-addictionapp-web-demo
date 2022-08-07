@@ -1,0 +1,19 @@
+{
+  "name": "vgz-addictionapp-web-demo",
+  "version": "1.0.0",
+  "description": "a web demo of an addiction risk assessment app",
+  "main": "./src/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vg1566/vgz-addictionapp-web-demo.git"
+  },
+  "author": "VGZ",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/vg1566/vgz-addictionapp-web-demo/issues"
+  },
+  "homepage": "https://github.com/vg1566/vgz-addictionapp-web-demo#readme"
+}
