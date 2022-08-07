@@ -1,3 +1,5 @@
+// This task was made to the specifications here: https://www.impulsivity.org/measurement/bart/
+
 import {setTitleColor} from "./utils.js";
 
 let totalScore = 0;
@@ -19,6 +21,7 @@ const makeNewBalloon = () => {
     if(balloonsLeft === 0)
     {
         document.querySelector('#content').innerHTML = `Sorry! You're out of balloons. Your final score is ${totalScore}, which can now be spent at the shop.`;
+        localStorage.setItem('vgz-addapp-balloondata', totalScore);
         localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + totalScore);
         return;
     }
@@ -65,6 +68,11 @@ const pumpBalloon = () => {
 
 const init = () => {
     setShopChanges();
+    if(localStorage.getItem('vgz-addapp-balloondata')) {
+        document.querySelector('#task-done-title').classList.remove('hidden');
+        document.querySelector('#task-done-msg').classList.remove('hidden');
+        return;
+    }
 
     // create messages
     newBlnMsg = document.createElement('p');
@@ -86,7 +94,7 @@ const init = () => {
 
     // create image
     balloonImg = document.createElement('img');
-    balloonImg.src = `/assets/balloon.png`;
+    balloonImg.src = `assets/balloon.png`;
     balloonImg.style = `width:5%`;
 
     // create buttons

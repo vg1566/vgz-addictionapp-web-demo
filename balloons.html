@@ -6,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balloon Task</title>
     <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <script type="module" src="src/balloons.js"></script>
 </head>
 <body class="center-text">
+    <!-- This task was made to the specifications here: https://www.impulsivity.org/measurement/bart/ -->
     <div class="row">
         <h1>Balloon Task</h1>
     </div>
     <div class="row">
         <div class="col-sm-0 col-md-3 col-lg-4"></div>
         <nav class="column col-sm-12 col-md-6 col-lg-4">
-            <a class="button" href="/surveys.html">Surveys</a>
-            <a class="button" href="/balloons.html">Task 1 - Balloons</a>
-            <a class="button" href="/stroop.html">Task 2 - Stroop</a>
-            <a class="button" href="/trails.html">Task 3 - Trails</a>
-            <a class="button" href="/stop.html">Task 4 - Stop Signal</a>
-            <a class="button" href="/shop.html">Points Shop</a>
+            <a class="button" href="surveys.html">Surveys</a>
+            <a class="button" href="balloons.html">Task 1 - Balloons</a>
+            <a class="button" href="stroop.html">Task 2 - Stroop</a>
+            <a class="button" href="trails.html">Task 3 - Trails</a>
+            <a class="button" href="stop.html">Task 4 - Stop Signal</a>
+            <a class="button" href="shop.html">Points Shop</a>
         </nav>
         <div class="col-sm-0 col-md-3 col-lg-4"></div>
     </div>
     <div class="row">
         <div class="col-sm-0 col-md-3 col-lg-4"></div>
         <div class="column col-sm-12 col-md-6 col-lg-4" id="content">
+            <h2 id="task-done-title" class="hidden">Task Already Completed</h2>
+            <p id="task-done-msg" class="hidden">You've already completed this task. Try another?</p>
             <div class="row">
                 <div class="column col-sm" id="messages"></div>
             </div>
