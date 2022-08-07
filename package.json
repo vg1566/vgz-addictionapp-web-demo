@@ -4,6 +4,7 @@
   "description": "a web demo of an addiction risk assessment app",
   "main": "./src/",
   "scripts": {
+    "start": "node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/vg1566/vgz-addictionapp-web-demo/issues"
   },
-  "homepage": "https://github.com/vg1566/vgz-addictionapp-web-demo#readme"
+  "homepage": "https://github.com/vg1566/vgz-addictionapp-web-demo#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
 }
