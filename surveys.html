@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Surveys</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="module" src="src/surveys.js"></script>
+</head>
+<body class="center-text">
+    <div class="row">
+        <h1>Surveys</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-0 col-md-3 col-lg-4"></div>
+        <nav class="column col-sm-12 col-md-6 col-lg-4">
+            <a class="button" href="surveys.html">Surveys</a>
+            <a class="button" href="balloons.html">Task 1 - Balloons</a>
+            <a class="button" href="stroop.html">Task 2 - Stroop</a>
+            <a class="button" href="trails.html">Task 3 - Trails</a>
+            <a class="button" href="stop.html">Task 4 - Stop Signal</a>
+            <a class="button" href="shop.html">Points Shop</a>
+        </nav>
+        <div class="col-sm-0 col-md-3 col-lg-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-0 col-md-1 col-lg-3"></div>
+        <div class="column col-sm-12 col-md-10 col-lg-6" id="content">
+            <div>
+                <button id="it-button">Italiano</button>
+                <button id="en-button">English</button>
+            </div>
+            <form id="demo">
+                <h2 id="demo-h">Demographic info</h2>
+                <label for="f-name">First Name:</label>
+                <input type="text" id="f-name"><br>
+                <label for="f-name">Last Name:</label>
+                <input type="text" id="l-name"><br>
+                <label for="age">Age:</label>
+                <input type="number" id="age">
+            </form>
+            <!--The Gambling Urges Questionnaire (GUQ) from Elman et al., 2010-->
+            <form id="guq"></form>
+            <!--The Barratt Impulsiveness Scale (BIS) from Patton et al., 1995-->
+            <form id="bis"></form>
+        </div>
+        <div class="col-sm-0 col-md-1 col-lg-3"></div>
+    </div>
+</body>
+</html>

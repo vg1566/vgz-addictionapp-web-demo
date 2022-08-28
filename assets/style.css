@@ -25,3 +25,21 @@ h1 {
 .blue {
     color: blue;
 }
+
+#error {
+    color: red;
+}
+
+.survey-question > input {
+    padding: 0;
+    margin: 0;
+    margin-left: 1%;
+}
+
+.survey-question > label {
+    padding: 0;
+}
+
+hr {
+    margin: 20px 0;
+}

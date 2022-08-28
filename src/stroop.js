@@ -8,7 +8,9 @@ let startTime;
 let newTime;
 let matchingTotal = 0;
 let unmatchingTotal = 0;
-let wordsLeft = 29;
+let matchingAttemptNum = 0;
+let unmatchingAttemptNum = 0;
+let wordsLeft = 30;
 
 const getRandColor = () => {
     const colors = ['red', 'green', 'blue'];
@@ -24,7 +26,7 @@ const makeNewWord = () => {
         blueBtn.classList.add('hidden');
         document.querySelector('#stroop-word').classList.add('hidden');
         const endMsg = document.createElement('p');
-        endMsg.innerHTML = `The task has ended. Your total score is ${totalScore*20}. Stroop effect: ${(unmatchingTotal-matchingTotal)/1000}`;
+        endMsg.innerHTML = `The task has ended. Your total score is ${totalScore*20}. Stroop effect: ${((unmatchingTotal/unmatchingAttemptNum)-(matchingTotal/matchingAttemptNum))/1000}`;
         document.querySelector('#messages').appendChild(endMsg);
 
         localStorage.setItem('vgz-addapp-stroopdata', (unmatchingTotal-matchingTotal)/1000);
@@ -43,9 +45,11 @@ const checkColor = (input) => {
     if(curWord.color === input) totalScore++; // this is for shop points
     if(curWord.color === curWord.text) {
         matchingTotal += newTime - startTime;
+        matchingAttemptNum++;
     }
     else {
         unmatchingTotal += newTime - startTime;
+        unmatchingAttemptNum++;
     }
     makeNewWord();
 }
@@ -74,7 +78,8 @@ const init = () => {
     let handedness;
     if(!localStorage.getItem('vgz-addapp-handedness')) {
         document.querySelector('#survey-msg').classList.remove('hidden');
-        return;
+        handedness = 'right';
+        //return;
     }
     else handedness = localStorage.getItem('vgz-addapp-handedness');
 
