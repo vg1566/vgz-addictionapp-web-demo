@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Stop Signal Task</title>
+    <title>Trails Task</title>
     <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
     <link rel="stylesheet" href="assets/style.css">
     <script type="module" src="src/trails.js"></script>
@@ -23,6 +23,7 @@
             <a class="button" href="trails.html">Task 3 - Trails</a>
             <a class="button" href="stop.html">Task 4 - Stop Signal</a>
             <a class="button" href="shop.html">Points Shop</a>
+            <a class="button" href="results.html">Results</a>
         </nav>
         <div class="col-sm-0 col-md-3 col-lg-4"></div>
     </div>
@@ -33,7 +34,9 @@
             <h2 id="task-done-title" class="hidden">Task Already Completed</h2>
             <p id="task-done-msg" class="hidden">You've already completed this task. Try another?</p>
             <div class="row">
-                <div class="column col-sm" id="messages"></div>
+                <div class="column col-sm" id="messages">
+                    <p id="instructions">In this task, you must connect the nodes in ascending order, alternating with the alphabet. Start by connecting the '1' node to the 'A' node, then connect that to the '2' node, then connect the 'B' node, and so on. You can connect the nodes by clicking/tapping and dragging across the screen. Nodes will go black when you've successfully connected it to the previous node. Please go as fast as you can without connecting any incorrect nodes.</p>
+                </div>
             </div>
             <div class="row">
                 <div class="column col-sm" id="buttons">
@@ -41,8 +44,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="column col-sm" id="trails">
-                    <canvas></canvas>
+                <div class="column col-sm" id="content">
+                    <p class="hidden">placeholder</p>
                 </div>
             </div>
         </div>

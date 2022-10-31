@@ -10,7 +10,8 @@ let matchingTotal = 0;
 let unmatchingTotal = 0;
 let matchingAttemptNum = 0;
 let unmatchingAttemptNum = 0;
-let wordsLeft = 30;
+let unmatchingScore = 0;
+let wordsLeft = 10;
 
 const getRandColor = () => {
     const colors = ['red', 'green', 'blue'];
@@ -26,10 +27,18 @@ const makeNewWord = () => {
         blueBtn.classList.add('hidden');
         document.querySelector('#stroop-word').classList.add('hidden');
         const endMsg = document.createElement('p');
-        endMsg.innerHTML = `The task has ended. Your total score is ${totalScore*20}. Stroop effect: ${((unmatchingTotal/unmatchingAttemptNum)-(matchingTotal/matchingAttemptNum))/1000}`;
+        endMsg.innerHTML = `The task has ended. Your total score is ${totalScore*20}.`;
         document.querySelector('#messages').appendChild(endMsg);
 
-        localStorage.setItem('vgz-addapp-stroopdata', (unmatchingTotal-matchingTotal)/1000);
+        const stroopEffect = ((unmatchingTotal/unmatchingAttemptNum)-(matchingTotal/matchingAttemptNum))/1000;
+
+        localStorage.setItem('vgz-addapp-stroopdata-accurates', totalScore);
+        localStorage.setItem('vgz-addapp-stroopdata-unmatchaccurates', unmatchingScore);
+        localStorage.setItem('vgz-addapp-stroopdata-effect', stroopEffect);
+        localStorage.setItem('vgz-addapp-stroopdata-unmatchtime', unmatchingTotal);
+        localStorage.setItem('vgz-addapp-stroopdata-matchtime', matchingTotal);
+        localStorage.setItem('vgz-addapp-stroopdata-unmatchnum', unmatchingAttemptNum);
+        localStorage.setItem('vgz-addapp-stroopdata-matchnum', matchingAttemptNum);
         localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + totalScore*20);
         return;
     }
@@ -50,6 +59,7 @@ const checkColor = (input) => {
     else {
         unmatchingTotal += newTime - startTime;
         unmatchingAttemptNum++;
+        if(curWord.color === input) unmatchingScore++; // this is for incongruent answer accuracy
     }
     makeNewWord();
 }
@@ -69,7 +79,7 @@ const startStroop = () => {
 }
 
 const init = () => {
-    if(localStorage.getItem('vgz-addapp-balloondata')) {
+    if(localStorage.getItem('vgz-addapp-stroopdata-effect')) {
         document.querySelector('#task-done-title').classList.remove('hidden');
         document.querySelector('#task-done-msg').classList.remove('hidden');
         document.querySelector('#start-btn').classList.add('hidden');
@@ -78,8 +88,9 @@ const init = () => {
     let handedness;
     if(!localStorage.getItem('vgz-addapp-handedness')) {
         document.querySelector('#survey-msg').classList.remove('hidden');
-        handedness = 'right';
-        //return;
+        document.querySelector('#start-btn').classList.add('hidden');
+        //handedness = 'right';
+        return;
     }
     else handedness = localStorage.getItem('vgz-addapp-handedness');
 

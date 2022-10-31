@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Results</title>
     <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <script type="module" src="src/shop.js"></script>
+    <script type="module" src="src/results.js"></script>
 </head>
 <body class="center-text">
     <div class="row">
-        <h1>Points Shop</h1>
+        <h1>Results</h1>
     </div>
     <div class="row">
         <div class="col-sm-0 col-md-3 col-lg-4"></div>
@@ -26,21 +26,21 @@
         </nav>
         <div class="col-sm-0 col-md-3 col-lg-4"></div>
     </div>
-
     <div class="row">
-        <div class="col-sm-0 col-md-3 col-lg-4"></div>
-        <div class="column col-sm-12 col-md-6 col-lg-4">
-            <h2 id="cur-pt-total"></h2>
-            <hr>
-            <h3 id="error" class="hidden">Not enough points for this purchase</h3>
-            <h3>Current point total: <span id="cur-pt-label"></span></h3>
-            <h2>200 points to unlock page title color:</h2>
-            <button id="default-title">Default</button>
-            <button id="red-title">Red</button>
-            <button id="blue-title">Blue</button>
-            <p>Please note that color changes do not work on the stroop test page.</p>
+        <div class="column col-sm-12" id="results">
+            <h2>Balloon Data</h2>
+            <p id="balloon-res">N/A</p>
+            <h2>Stroop Data</h2>
+            <p id="stroop-res">N/A</p>
+            <h2>Trails Data</h2>
+            <p id="trails-res">N/A</p>
+
+            <!--<h2>Meaning of result numbers</h2>
+            <p>Balloon results: the total number of points a participant gained during the balloon task.
+                <br>Stroop results: the average difference in seconds between the time it took to respond to a word that matched its color and a word that didn't.
+                <br>Trail results: the amount of time in seconds it took to complete the entire trails course.
+            </p>-->
         </div>
-        <div class="col-sm-0 col-md-3 col-lg-4"></div>
     </div>
 </body>
 </html>

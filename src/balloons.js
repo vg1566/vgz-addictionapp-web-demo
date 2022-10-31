@@ -5,7 +5,8 @@ import {setTitleColor} from "./utils.js";
 let totalScore = 0;
 const emptyBalloon = { currentPopNum:0, currentValue:0 };
 let curBalloon = emptyBalloon;
-let balloonsLeft = 29;
+let poppedBalloonsNum = 0;
+let balloonsLeft = 9;
 
 let balloonImg;
 let ohNoMsg;
@@ -22,6 +23,7 @@ const makeNewBalloon = () => {
     {
         document.querySelector('#content').innerHTML = `Sorry! You're out of balloons. Your final score is ${totalScore}, which can now be spent at the shop.`;
         localStorage.setItem('vgz-addapp-balloondata', totalScore);
+        localStorage.setItem('vgz-addapp-balloondata-popnum', poppedBalloonsNum);
         localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + totalScore);
         return;
     }
@@ -47,6 +49,7 @@ const makeNewBalloon = () => {
 }
 
 const explodeBalloon = () => {
+    poppedBalloonsNum++;
     document.querySelector('#pump-button').classList.add('hidden');   
     document.querySelector('#sell-button').classList.add('hidden');
     newBlnMsg.classList.add('hidden');
@@ -90,7 +93,7 @@ const init = () => {
     valueLabel.innerHTML = `Balloon value: ${0}`;
 
     balloonsLeftLabel = document.createElement('p');
-    balloonsLeftLabel.innerHTML = `Balloons left: ${29}`;
+    balloonsLeftLabel.innerHTML = `Balloons left: ${balloonsLeft}`;
 
     // create image
     balloonImg = document.createElement('img');

@@ -1,2 +1,4 @@
 Using:
 mini.css: http://minicss.us/
+Title font (Bungee): https://fonts.google.com/specimen/Bungee
+Task font (Open Dyslexic): https://opendyslexic.org/

@@ -5,4 +5,9 @@ const setTitleColor = (color = localStorage.getItem('vgz-addapp-titlecolor')) =>
     titleElement.classList.add(color);
 }
 
+const setAllShopSettings = () => {
+    setTitleColor();
+}
+
 export {setTitleColor};
+export {setAllShopSettings}
