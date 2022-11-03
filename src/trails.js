@@ -191,7 +191,7 @@ const endTask = () => {
     if(earnedPoints<0) earnedPoints = 0;
     //canvas.classList.add('hidden');
     localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + earnedPoints);
-    document.querySelector('#content').innerHTML = `Congratulations, you've finished the task. You've earned ${(earnedPoints)} points, which can now be spent at the shop.`;
+    document.querySelector('#content').innerHTML = `The task is now complete. Your score is ${earnedPoints}, which can now be spent at the shop.`;
 }
 
 const init = () => {

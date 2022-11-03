@@ -1,12 +1,12 @@
 // This task was made to the specifications here: https://www.impulsivity.org/measurement/bart/
 
-import {setTitleColor} from "./utils.js";
+import * as utils from "./utils.js";
 
 let totalScore = 0;
 const emptyBalloon = { currentPopNum:0, currentValue:0 };
 let curBalloon = emptyBalloon;
 let poppedBalloonsNum = 0;
-let balloonsLeft = 9;
+let balloonsLeft = utils.numRepetitions.balloon-1;
 
 let balloonImg;
 let ohNoMsg;
@@ -14,14 +14,10 @@ let newBlnMsg;
 let valueLabel;
 let balloonsLeftLabel;
 
-const setShopChanges = () => {
-    setTitleColor();
-}
-
 const makeNewBalloon = () => {
     if(balloonsLeft === 0)
     {
-        document.querySelector('#content').innerHTML = `Sorry! You're out of balloons. Your final score is ${totalScore}, which can now be spent at the shop.`;
+        document.querySelector('#content').innerHTML = `The task is now complete. Your final score is ${totalScore}, which can now be spent at the shop.`;
         localStorage.setItem('vgz-addapp-balloondata', totalScore);
         localStorage.setItem('vgz-addapp-balloondata-popnum', poppedBalloonsNum);
         localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + totalScore);
@@ -70,7 +66,7 @@ const pumpBalloon = () => {
 }
 
 const init = () => {
-    setShopChanges();
+    utils.setAllShopSettings();
     if(localStorage.getItem('vgz-addapp-balloondata')) {
         document.querySelector('#task-done-title').classList.remove('hidden');
         document.querySelector('#task-done-msg').classList.remove('hidden');

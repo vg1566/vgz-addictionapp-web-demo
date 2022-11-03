@@ -9,5 +9,20 @@ const setAllShopSettings = () => {
     setTitleColor();
 }
 
-export {setTitleColor};
-export {setAllShopSettings}
+const addPoints = (num) => {
+    console.log(Math.floor(num));
+    localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + Math.floor(num));
+}
+
+const numRepetitions = {
+    stroop: 10,
+    balloon: 10,
+    stop: 30
+}
+
+export {
+    setTitleColor,
+    setAllShopSettings,
+    addPoints,
+    numRepetitions
+};

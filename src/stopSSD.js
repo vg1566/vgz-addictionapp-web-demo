@@ -1,4 +1,4 @@
-import {setAllShopSettings} from "./utils.js";
+import * as utils from "./utils.js";
 
 let startBtn;
 
@@ -16,7 +16,7 @@ let stopSignalDelay = 250;
 let stopSignalWait = 2000;
 const stopOdds = 4;
 const waitMax = 3000;
-const totalNumGenerations = 10;
+const totalNumGenerations = utils.numRepetitions.stop;
 let status = statuses[0];
 let score = 0;
 let stopTotalNum = 0;
@@ -29,7 +29,7 @@ let startTime;
 let newTime;
 
 const init = () => {
-    setAllShopSettings();
+    utils.setAllShopSettings();
 
     startBtn = document.querySelector('#start-btn');
 
@@ -53,7 +53,13 @@ const init = () => {
 }
 
 const endTask = () => {
-    document.querySelector('#content').innerHTML = `gratz. score: ${score}/${totalNumGenerations}. Your avg time taken is ${Math.floor(goTotalTime/(totalNumGenerations-stopTotalNum))}ms`; //
+    localStorage.setItem('vgz-addapp-stopdata-successnum', score); 
+    localStorage.setItem('vgz-addapp-stopdata-avgtime', Math.floor(goTotalTime/(totalNumGenerations-stopTotalNum)));
+    localStorage.setItem('vgz-addapp-stopdata-totalstopnum', stopTotalNum);
+    localStorage.setItem('vgz-addapp-stopdata-failstopnum', stopFailNum);
+    const earnedPoints = (score*15)/(Math.floor(goTotalTime/(totalNumGenerations-stopTotalNum))/1000);
+    utils.addPoints(earnedPoints);
+    document.querySelector('#content').innerHTML = `The task is now complete. Your score is ${Math.floor(earnedPoints)}, which can now be spent at the shop`;
 }
 
 // identify which half of the a touch/mousedown occurs on

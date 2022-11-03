@@ -1,3 +1,5 @@
+import * as utils from "./utils.js";
+
 let redBtn;
 let greenBtn;
 let blueBtn;
@@ -11,7 +13,7 @@ let unmatchingTotal = 0;
 let matchingAttemptNum = 0;
 let unmatchingAttemptNum = 0;
 let unmatchingScore = 0;
-let wordsLeft = 10;
+let wordsLeft = utils.numRepetitions.stroop;
 
 const getRandColor = () => {
     const colors = ['red', 'green', 'blue'];
@@ -27,7 +29,7 @@ const makeNewWord = () => {
         blueBtn.classList.add('hidden');
         document.querySelector('#stroop-word').classList.add('hidden');
         const endMsg = document.createElement('p');
-        endMsg.innerHTML = `The task has ended. Your total score is ${totalScore*20}.`;
+        endMsg.innerHTML = `The task is now complete. Your total score is ${totalScore*20}.`;
         document.querySelector('#messages').appendChild(endMsg);
 
         const stroopEffect = ((unmatchingTotal/unmatchingAttemptNum)-(matchingTotal/matchingAttemptNum))/1000;
