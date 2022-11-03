@@ -20,7 +20,7 @@ const makeNewBalloon = () => {
         document.querySelector('#content').innerHTML = `The task is now complete. Your final score is ${totalScore}, which can now be spent at the shop.`;
         localStorage.setItem('vgz-addapp-balloondata', totalScore);
         localStorage.setItem('vgz-addapp-balloondata-popnum', poppedBalloonsNum);
-        localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + totalScore);
+        utils.addPoints(totalScore);
         return;
     }
     balloonsLeft--;

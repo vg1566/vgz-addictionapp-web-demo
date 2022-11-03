@@ -53,6 +53,7 @@ const init = () => {
 }
 
 const endTask = () => {
+    document.querySelector('#instructions').classList.add('hidden');
     localStorage.setItem('vgz-addapp-stopdata-successnum', score); 
     localStorage.setItem('vgz-addapp-stopdata-avgtime', Math.floor(goTotalTime/(totalNumGenerations-stopTotalNum)));
     localStorage.setItem('vgz-addapp-stopdata-totalstopnum', stopTotalNum);
@@ -140,8 +141,6 @@ const drawMarker = (m) => {
     //console.log('marker: ' + m);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawText(m, canvas.width/2, canvas.height/2);
-
-    // check for stop marker first tho //??????
 }
 
 const drawText = (text,x,y,color="black",style=`${markerTextSize}px Open Dyslexic`) => {

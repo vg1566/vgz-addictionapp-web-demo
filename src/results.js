@@ -37,7 +37,7 @@ const fillResults = () => {
     const sigAvgTime = localStorage.getItem('vgz-addapp-stopdata-avgtime');
     const sigTotalStopNum = localStorage.getItem('vgz-addapp-stopdata-totalstopnum');
     const sigFailStopNum = localStorage.getItem('vgz-addapp-stopdata-failstopnum');
-    if(sigSuccessNum) document.querySelector('#stop-res').innerHTML = `Overall accuracy ${sigSuccessNum}/${utils.numRepetitions.stop}<br>
+    if(sigSuccessNum) document.querySelector('#stop-res').innerHTML = `Overall accuracy: ${sigSuccessNum}/${utils.numRepetitions.stop}<br>
     Avg time taken per non-stop signal: ${sigAvgTime}ms<br>
     Total number of stop signals shown: ${sigTotalStopNum}<br>
     Number of stop signal failed responses: ${sigFailStopNum}<br>`;

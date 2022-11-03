@@ -1,4 +1,4 @@
-import {setAllShopSettings} from "./utils.js";
+import * as utils from "./utils.js";
 
 let ctx;
 let canvas;
@@ -190,12 +190,12 @@ const endTask = () => {
     let earnedPoints = Math.floor(300 - (totalTaskTime/100));
     if(earnedPoints<0) earnedPoints = 0;
     //canvas.classList.add('hidden');
-    localStorage.setItem('vgz-addapp-shoppoints', Math.floor(localStorage.getItem('vgz-addapp-shoppoints')) + earnedPoints);
+    utils.addPoints(earnedPoints);
     document.querySelector('#content').innerHTML = `The task is now complete. Your score is ${earnedPoints}, which can now be spent at the shop.`;
 }
 
 const init = () => {
-    setAllShopSettings();
+    utils.setAllShopSettings();
 
     startBtn = document.querySelector('#start-btn');
 
