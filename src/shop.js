@@ -53,9 +53,16 @@ const init = () => {
     errorMsg = document.querySelector('#error');
     curPtLabel = document.querySelector('#cur-pt-label');
     curPtLabel.innerHTML = curPtTotal;
+
+    // title colors
     document.querySelector('#default-title').onclick = () => { tryBuy(setTitleColor, 'black', titleColorPrice, 'blackTitle'); }; 
     document.querySelector('#red-title').onclick =  () => { tryBuy(setTitleColor, 'red', titleColorPrice, 'redTitle'); }; 
     document.querySelector('#blue-title').onclick =  () => { tryBuy(setTitleColor, 'blue', titleColorPrice, 'blueTitle'); }; 
+    document.querySelector('#green-title').onclick =  () => { tryBuy(setTitleColor, 'green', titleColorPrice, 'greenTitle'); }; 
+    document.querySelector('#yellow-title').onclick =  () => { tryBuy(setTitleColor, 'yellow', titleColorPrice, 'yellowTitle'); }; 
+    document.querySelector('#turquoise-title').onclick =  () => { tryBuy(setTitleColor, 'turquoise', titleColorPrice, 'turquoiseTitle'); }; 
+    document.querySelector('#purple-title').onclick =  () => { tryBuy(setTitleColor, 'purple', titleColorPrice, 'purpleTitle'); }; 
+    document.querySelector('#pink-title').onclick =  () => { tryBuy(setTitleColor, 'pink', titleColorPrice, 'pinkTitle'); }; 
 }
 
 window.onload = init;

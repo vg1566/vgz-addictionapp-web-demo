@@ -25,11 +25,31 @@ h1 {
 }
 
 .red {
-    color: red;
+    color: firebrick;
 }
 
 .blue {
-    color: blue;
+    color: mediumblue;
+}
+
+.green {
+    color: green;
+}
+
+.turquoise {
+    color: turquoise;
+}
+
+.purple {
+    color: rebeccapurple;
+}
+
+.pink {
+    color: hotpink;
+}
+
+.yellow {
+    color: gold;
 }
 
 #error {
