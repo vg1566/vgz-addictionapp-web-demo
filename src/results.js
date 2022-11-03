@@ -42,13 +42,14 @@ const fillResults = () => {
     Total number of balloons popped: ${balloonPopNum}/${utils.numRepetitions.balloon}`;
 
     // Stroop Results
-    //const stroopEffect = localStorage.getItem('vgz-addapp-stroopdata-effect');
+    const stroopEffect = localStorage.getItem('vgz-addapp-stroopdata-effect');
     const stroopScore = localStorage.getItem('vgz-addapp-stroopdata-accurates');
     const stroopUnmatchScore = localStorage.getItem('vgz-addapp-stroopdata-unmatchaccurates');
     const stroopUnmatchNum = localStorage.getItem('vgz-addapp-stroopdata-unmatchnum');
     const stroopMatchTime = localStorage.getItem('vgz-addapp-stroopdata-matchtime');
     const stroopUnmatchTime = localStorage.getItem('vgz-addapp-stroopdata-unmatchtime');
-    if(stroopEffect) document.querySelector('#stroop-res').innerHTML = `Stroop effect: ${stroopEffect}s<br>
+    /*Stroop effect: ${stroopEffect}s<br>*/
+    if(stroopEffect) document.querySelector('#stroop-res').innerHTML = `
     Overall accuracy: ${stroopScore}/${utils.numRepetitions.stroop}<br>
     Incongruent accuracy: ${stroopUnmatchScore}/${stroopUnmatchNum}<br>
     Total time taken (congruent): ${stroopMatchTime}ms<br>

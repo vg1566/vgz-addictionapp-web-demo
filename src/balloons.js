@@ -72,6 +72,12 @@ const init = () => {
         document.querySelector('#task-done-msg').classList.remove('hidden');
         return;
     }
+    if(!localStorage.getItem('vgz-addapp-handedness')) {
+        document.querySelector('#survey-msg').classList.remove('hidden');
+        document.querySelector('#start-btn').classList.add('hidden');
+        document.querySelector('#instructions').classList.add('hidden');
+        return;
+    }
 
     // create messages
     newBlnMsg = document.createElement('p');

@@ -122,17 +122,19 @@ const init = () => {
     wordElement = document.querySelector('#stroop-word');
 
     // add elements to doc
-    // if left-handed swap buttons
-    if(handedness === 'left') {
-        document.querySelector('#messages').appendChild(redBtn);
-        document.querySelector('#messages').appendChild(greenBtn);
-        document.querySelector('#messages').appendChild(blueBtn);
-    }
-    else {
-        document.querySelector('#messages').appendChild(blueBtn);
-        document.querySelector('#messages').appendChild(greenBtn);
-        document.querySelector('#messages').appendChild(redBtn);
-    }
+    document.querySelector('#messages').appendChild(blueBtn);
+    document.querySelector('#messages').appendChild(greenBtn);
+    document.querySelector('#messages').appendChild(redBtn);
+    //if(handedness === 'left') {
+    //    document.querySelector('#messages').appendChild(redBtn);
+    //    document.querySelector('#messages').appendChild(greenBtn);
+    //    document.querySelector('#messages').appendChild(blueBtn);
+    //}
+    //else {
+    //    document.querySelector('#messages').appendChild(blueBtn);
+    //    document.querySelector('#messages').appendChild(greenBtn);
+    //    document.querySelector('#messages').appendChild(redBtn);
+    //}
 
     document.querySelector('#start-btn').onclick = startStroop;
 }

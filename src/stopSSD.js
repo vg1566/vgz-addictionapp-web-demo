@@ -30,6 +30,19 @@ let newTime;
 
 const init = () => {
     utils.setAllShopSettings();
+    if(localStorage.getItem('vgz-addapp-stopdata-successnum')) {
+        document.querySelector('#task-done-title').classList.remove('hidden');
+        document.querySelector('#task-done-msg').classList.remove('hidden');
+        document.querySelector('#start-btn').classList.add('hidden');
+        document.querySelector('#instructions').classList.add('hidden');
+        return;
+    }
+    if(!localStorage.getItem('vgz-addapp-handedness')) {
+        document.querySelector('#survey-msg').classList.remove('hidden');
+        document.querySelector('#start-btn').classList.add('hidden');
+        document.querySelector('#instructions').classList.add('hidden');
+        return;
+    }
 
     startBtn = document.querySelector('#start-btn');
 
