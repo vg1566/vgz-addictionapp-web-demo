@@ -614,6 +614,10 @@ const init = () => {
         if (document.forms["dem"]["handedness"].value) localStorage.setItem('vgz-addapp-handedness', document.forms["dem"]["handedness"].value);
         // demo info copied over exactly
         // quiz info calculated here, value copied over
+        const saveMsg = document.querySelector('#save-msg');
+        saveMsg.classList.remove('hidden');
+        // wait 5 seconds, then hide save msg
+        setTimeout(() => { saveMsg.classList.add('hidden') }, 5000);
     }
 }
 
